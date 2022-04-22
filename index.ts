@@ -60,7 +60,7 @@ function writeCSV(filename: string, records: any) {
         header: [
             {id: 'name', title: 'Name'},
             {id: 'balance', title: 'Balance'},
-            {id: 'transactions', title: 'Transaction'}
+            {id: 'transactions', title: 'Transactions'}
             // {id: 'narrative', title: 'Narrative'},
             // {id: 'amount', title: 'Amount'}
         ]
@@ -174,7 +174,7 @@ function runInterface() {
                 else console.log('Account does not exist');
                 break;
         }
-        runInterface()
+        runInterface();
     } else if (userCommand.includes('Export')) {
         let filename: string = userCommand.slice(userCommand.indexOf('Import File ') + 'Import File '.length);
         let extension: string = userCommand.slice(userCommand.indexOf('.') + '.'.length);
@@ -188,6 +188,7 @@ function runInterface() {
             case 'xml':
                 break;
         }
+        runInterface();
     } else {
         console.log('Command does not exist. Enter again.');
         runInterface();
